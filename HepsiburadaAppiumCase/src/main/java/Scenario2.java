@@ -20,7 +20,7 @@ public class Scenario2 {
 
 
     By superFiyatSuperTeklifButton = By.id("com.pozitron.hepsiburada:id/dod_all");
-    By checkProductWithMultiplePics = By.id("com.pozitron.hepsiburada:id/pi_product_list_item_image"); // Index = 1 olmalı
+    By checkProductWithMultiplePics = By.id("com.pozitron.hepsiburada:id/pi_product_list_item_image");
     By openProductWithMultiplePics = By.id("com.pozitron.hepsiburada:id/tv_product_list_item_name");
     By openProductPics = By.id("com.pozitron.hepsiburada:id/productImage");
     By firstPicForScrolling = By.id("com.pozitron.hepsiburada:id/zoomableImage");
@@ -69,7 +69,6 @@ public class Scenario2 {
         TouchActions action = new TouchActions(driver);
         action.scroll(wait.until(ExpectedConditions.visibilityOfElementLocated(firstPicForScrolling)), 10, 100);
         action.perform();
-        // Did action end scrolling?
     }
 
     @Test(dependsOnMethods = "scrollHorizontally")
@@ -86,8 +85,6 @@ public class Scenario2 {
     @Test(dependsOnMethods = "addProductToFavorites")
     public void enterUsernameAndClickOnLogin() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(clickOnUsernameInput)).sendKeys("luxuriantjackal@maildrop.cc");
-        //MobileElement element1 = (MobileElement) driver.findElementById(String.valueOf(clickOnUsernameInput));
-        //element.sendKeys("Hello world!");
         wait.until(ExpectedConditions.visibilityOfElementLocated(clickOnGirişYapInUsernamePage));
     }
 
